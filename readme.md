@@ -1,4 +1,4 @@
-# Chrome Extension — Shivam's Project
+# Metro Layout for Bookmarks - Chrome Extension
 
 A lightweight and responsive Chrome Extension built to enhance browsing productivity with a clean UI and intuitive controls.
 

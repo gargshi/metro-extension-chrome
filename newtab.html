@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>New Tab Metro</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="header">
+    <div class="title">
+      <span>Bookmarks</span>
+    </div>
+    <!-- <div class="status">Drag a tile to reorder</div> -->
+
+
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search bookmarks..." />
+      <button id="searchButton" aria-label="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+          <path
+            d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" />
+        </svg>
+      </button>
+    </div>
+    <button class="btn" id="open-settings">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="settings-icon">
+        <path
+          d="M20.991 10H19.42a1.039 1.039 0 0 1-.951-.674l-.005-.013a1.04 1.04 0 0 1 .2-1.146l1.11-1.11a1.01 1.01 0 0 0 0-1.428l-1.4-1.4a1.01 1.01 0 0 0-1.428 0l-1.11 1.11a1.04 1.04 0 0 1-1.146.2h-.013a1.04 1.04 0 0 1-.677-.96v-1.57A1.009 1.009 0 0 0 12.991 2h-1.982A1.009 1.009 0 0 0 10 3.009v1.57a1.04 1.04 0 0 1-.674.952h-.013a1.04 1.04 0 0 1-1.146-.2l-1.11-1.11a1.01 1.01 0 0 0-1.428 0l-1.4 1.4a1.01 1.01 0 0 0 0 1.428l1.11 1.11a1.04 1.04 0 0 1 .2 1.146v.013A1.039 1.039 0 0 1 4.58 10H3.009A1.009 1.009 0 0 0 2 11.009v1.982A1.009 1.009 0 0 0 3.009 14H4.58a1.039 1.039 0 0 1 .951.674v.013a1.04 1.04 0 0 1-.2 1.146l-1.11 1.11a1.01 1.01 0 0 0 0 1.428l1.4 1.4a1.01 1.01 0 0 0 1.428 0l1.11-1.11a1.04 1.04 0 0 1 1.146-.2l.013.005a1.039 1.039 0 0 1 .682.954v1.571A1.009 1.009 0 0 0 11.009 22h1.982A1.009 1.009 0 0 0 14 20.991V19.42a1.039 1.039 0 0 1 .674-.951l.013-.005a1.04 1.04 0 0 1 1.146.2l1.11 1.11a1.01 1.01 0 0 0 1.428 0l1.4-1.4a1.01 1.01 0 0 0 0-1.428l-1.11-1.11a1.04 1.04 0 0 1-.2-1.146l.005-.013A1.039 1.039 0 0 1 19.42 14h1.571A1.009 1.009 0 0 0 22 12.991v-1.982A1.009 1.009 0 0 0 20.991 10zM12 15a3 3 0 1 1 3-3 3 3 0 0 1-3 3z" />
+      </svg>
+    </button>
+  </div>
+  <div class="sidebar" id="settings-sidebar">
+    <div class="sidebar-header">
+      <span>Settings</span>
+      <button title="Close Settings" class="btn" id="close-settings">
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="m2.828 17.828 6.086-6.086L15 17.828 17.828 15l-6.086-6.086 6.086-6.086L15 0 8.914 6.086 2.828 0 0 2.828l6.085 6.086L0 15l2.828 2.828z" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="setting-list">
+      <div class="setting">
+        <label for="num-tiles">Number of columns: <span id="num-tiles-value"></span></label>
+        <span id="num-tiles-controls">
+          1
+          <input type="range" id="num-tiles" min="1" max="10">
+          10
+        </span>
+      </div>      
+      <label><h5>BACKGROUND</h5></label>
+      
+      <div class="setting" id="bg-toggle-setting">
+        <label for="background-toggle" id="bg-tgl-lbl">Use Background Image</label>
+        <span id="background-toggle" class="setting-row">
+          <label class="switch">
+            <input type="checkbox" id="background-toggle-checkbox">
+            <span class="slider round"></span>
+          </label>
+        </span>
+      </div>      
+      
+      <div class="setting">
+        <label for="background-box">Background Color</label>
+        <span id="background-box" class="setting-row">
+          <input type="color" id="background-color" value="#000000">
+          <!-- <button class="btn" id="background-reset">Reset</button> -->
+        </span>
+      </div>
+      <div class="setting">
+        <label for="background-img-box">Background Image</label>
+        <span id="background-img-box" class="setting-row">
+          <input type="text" class="input" id="background-img-url" placeholder="Image URL">
+          <button class="btn" id="background-img-set">Set</button>
+        </span>
+      </div>      
+
+      <label><h5>EDIT MODE</h5></label>
+      <button class="btn" id="edit-mode-toggle">Enter Edit Mode [SHIFT + E]</button>
+      
+
+      <div class="sidebar-footer">
+        <p>Created by <a href="https://github.com/gargshi">Shivam</a></p>        
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="confirm-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span id="modal-title">Delete Bookmark</span>
+        <button title="Close Modal" class="btn" id="close-modal">
+          <svg xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="m2.828 17.828 6.086-6.086L15 17.828 17.828 15l-6.086-6.086 6.086-6.086L15 0 8.914 6.086 2.828 0 0 2.828l6.085 6.086L0 15l2.828 2.828z" />
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this bookmark?</p>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-danger" id="confirm-delete">Delete</button>
+        <button class="btn btn-primary" id="cancel-delete">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">    
+    <div class="grid"></div>
+  </div>
+
+  
+  <script src="script.js"></script>
+</body>
+
+</html>

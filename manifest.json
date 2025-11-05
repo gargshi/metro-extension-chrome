@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Metro Start \u2014 Enhanced New Tab",
+  "version": "2.0.0",
+  "description": "Windows 8 Metro-inspired new tab page with SVG icons, bookmarks, marquee titles, and live themes.",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "permissions": [
+    "bookmarks",
+    "storage",
+    "favicon"
+  ]
+}
